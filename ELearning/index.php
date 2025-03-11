@@ -1,5 +1,13 @@
 <?php
-  include('./dbConnection.php');
+session_start();
+?>
+
+include('./dbConnection.php');
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
+?>
+
   // Header Include from mainInclude 
   include('./mainInclude/header.php'); 
 ?>  
@@ -72,6 +80,10 @@
         <?php
           $sql = "SELECT * FROM course LIMIT 3,3";
           $result = $conn->query($sql);
+if(!$result) {
+    die("Query Failed: " . $conn->error);
+}
+
           if($result->num_rows > 0){ 
             while($row = $result->fetch_assoc()){
               $course_id = $row['course_id'];
