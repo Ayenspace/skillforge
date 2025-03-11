@@ -13,4 +13,6 @@
      <i class="fas fa-key"></i><label for="stupass" class="pl-2 font-weight-bold">New
        Password</label><small id="statusMsg3"></small><input type="password" class="form-control" placeholder="Password" name="stupass" id="stupass">
    </div>
+   <button type="submit" id="signupBtn">Sign Up</button>
+
  </form>
